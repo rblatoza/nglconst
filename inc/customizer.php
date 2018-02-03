@@ -25,6 +25,9 @@ function nglconst_customize_register( $wp_customize ) {
 			'render_callback' => 'nglconst_customize_partial_blogdescription',
 		) );
 	}
+
+// Load options.
+	require_once trailingslashit( get_template_directory() ) . '/inc/options.php';
 }
 add_action( 'customize_register', 'nglconst_customize_register' );
 
