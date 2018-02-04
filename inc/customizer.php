@@ -26,6 +26,13 @@ function nglconst_customize_register( $wp_customize ) {
 		) );
 	}
 
+
+// Sanitization.
+	require_once trailingslashit( get_template_directory() ) . '/inc/sanitize.php';
+
+	// Active callback.
+	require_once trailingslashit( get_template_directory() ) . '/inc/active.php';
+
 // Load options.
 	require_once trailingslashit( get_template_directory() ) . '/inc/options.php';
 }

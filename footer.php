@@ -25,6 +25,15 @@
 				printf( esc_html__( 'Theme: %1$s by %2$s.', 'nglconst' ), 'nglconst', '<a href="http://underscores.me/">Roderick Latoza</a>' );
 			?>
 		</div><!-- .site-info -->
+		<div class="footer-menu">
+			<?php wp_nav_menu( 
+				array( 
+					'theme_location' => 'footer-menu',
+					'menu_id'		 => 'footer_menu'
+				)
+			);
+			?>
+		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

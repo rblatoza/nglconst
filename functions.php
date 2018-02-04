@@ -41,10 +41,13 @@ if ( ! function_exists( 'nglconst_setup' ) ) :
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
+		add_image_size('nglconst-long', 370, 500, true);
+		add_image_size('nglconst-small', 200, 200, true);
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'nglconst' ),
+			'footer-menu' => esc_html__( 'Footer Menu', 'nglconst' ),
 		) );
 
 		/*

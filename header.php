@@ -22,12 +22,13 @@
 
 <body <?php body_class(); ?>>
 
-<?php 
-	$default 		= get_theme_mods();
-	echo "<pre>";
-	print_r( $default);
-	echo "</pre>";
+ <?php 
+//	$default 		= get_theme_mods();
+//	echo "<pre>";
+//	print_r( $default);
+//	echo "</pre>";
 ?>
+
 
 
 <div id="page" class="site">
