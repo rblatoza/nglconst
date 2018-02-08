@@ -86,6 +86,16 @@ if ( ! function_exists( 'nglconst_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'nglconst_setup' );
 
+
+add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
+
+function special_nav_class ($classes, $item) {
+    if (in_array('current-menu-item', $classes) ){
+        $classes[] = 'active ';
+    }
+    return $classes;
+}
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -120,7 +130,19 @@ add_action( 'widgets_init', 'nglconst_widgets_init' );
  * Enqueue scripts and styles.
  */
 function nglconst_scripts() {
-	wp_enqueue_style( 'nglconst-style', get_stylesheet_uri() );
+
+	//load bootstrap stylesheets...
+	wp_enqueue_style( 'bootstrap4', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
+
+	wp_enqueue_style( 'nglconst', get_stylesheet_uri() );
+
+	wp_enqueue_style( 'header', get_template_directory_uri() . '/css/header.css' );	
+
+	wp_enqueue_script( 'jquery', 'https://code.jquery.com/jquery-3.2.1.slim.min.js');
+
+	wp_enqueue_script( 'popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js');
+
+	wp_enqueue_script( 'bootstrap4','https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js');
 
 	wp_enqueue_script( 'nglconst-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
