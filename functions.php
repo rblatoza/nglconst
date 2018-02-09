@@ -44,9 +44,19 @@ if ( ! function_exists( 'nglconst_setup' ) ) :
 		add_image_size('nglconst-long', 370, 500, true);
 		add_image_size('nglconst-small', 200, 200, true);
 
+		//Register nav walker...
+		if ( ! file_exists( get_template_directory() . '/wp-bootstrap-navwalker.php' ) ) {
+			// file does not exist... return an error.
+			return new WP_Error( 'wp-bootstrap-navwalker-missing', __( 'It appears the wp-bootstrap-navwalker.php file may be missing.', 'wp-bootstrap-navwalker' ) );
+		} else {
+			// file exists... require it.
+    		require_once get_template_directory() . '/wp-bootstrap-navwalker.php';
+		}
+
+
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'nglconst' ),
+			'menu-1' => esc_html__( 'Primary Menu', 'nglconst' ),
 			'footer-menu' => esc_html__( 'Footer Menu', 'nglconst' ),
 		) );
 

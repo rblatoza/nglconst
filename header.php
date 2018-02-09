@@ -37,25 +37,29 @@
 		<div class="site-branding">
 			<?php
 			//the_custom_logo();
-		//	if ( is_front_page() && is_home() ) : ?>
+			if ( is_front_page() && is_home() ) : ?>
 				<div class="jumbotron jumbotron-fluid">
   					<div class="container">
-				  		<h1 class="display-5"><?php bloginfo( 'name' ); ?></h1>
+				  		<h1 class="display-5"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel	="home"><?php bloginfo( 'name' ); ?></a></h1>
 				  		<p class="lead"><?php echo get_bloginfo( 'description', 'display' ); ?></p>
 				  		<hr class="my-4">
 
-						<nav id="site-navigation" class="main-navigation">
-							<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'nglconst' ); ?></button>
-							<?php
-							wp_nav_menu( array(
-							'theme_location' => 'menu-1',
-							'menu_id'        => 'primary-menu',
-								) );
-							?>
-						</nav><!-- #site-navigation -->
-					</div>
-		</div><!-- .site-branding -->
+						<?php get_template_part( 'template-parts/content', 'navigation' ); ?>
 
+					</div>		
+				</div>
+			<?php else : ?>
+				<div class="jumbotron jumbotron-fluid not_homepage">
+  					<div class="container">
+				  		<h3><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel	="home"><?php bloginfo( 'name' ); ?></a></h1>
+				  		<p class="lead"><?php echo get_bloginfo( 'description', 'display' ); ?></p>
+				  		<hr class="my-4">
+						
+						<?php get_template_part( 'template-parts/content', 'navigation' ); ?>
+						
+					</div>
+			<?php 	endif; ?>
+		</div><!-- .site-branding -->
 
 	</header><!-- #masthead -->
 

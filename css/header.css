@@ -1,17 +1,28 @@
 .jumbotron-fluid {
 	margin-top: -50px !important;
     margin-bottom: 0px;
-    background-image: url(../images/back2.jpg);
+    background-color: #70B8CB;
     background-position: 0% 25%;
     background-size: cover;
     background-repeat: no-repeat;
+}
+.jumbotron-fluid h1 > a, .jumbotron-fluid p {
     color: white;
     text-shadow: black 0.3em 0.3em 0.3em;
 	font-family: 'Merriweather Sans', sans-serif;
 }
 
+.jumbotron-fluid h1 > a, .not_homepage h3 > a {
+	text-decoration: none;
+}
+
+.main-navigation {
+	margin-top: -30px;
+}
+
 .main-navigation ul {
 	float : right;
+	margin-top: 
 }
 
 .main-navigation ul li {
@@ -20,7 +31,6 @@
 }
 
 .main-navigation ul li a {
-	color: black;
 	text-shadow: none;
 	font-family: 'Open Sans', sans-serif;
 	text-transform: uppercase;
@@ -31,14 +41,70 @@
 	color: white;
 }
 
-ul.sub-menu {
-	background-color: #70BBCB;
+.main-navigation ul li, ul.sub-menu {
+	background-color: #70B8CB;
 }
 
-.current-menu-item, .current-menu-ancestor {
-	background-color: white;
+.active > a, .current-menu-ancestor > a {
+	color: white;
+	font-weight: bold;	
+	font-size: 18px;	
 }
 
 .current-menu-item > a {
-	color: black;
+	color: white;
+	font-weight: bold;
+	font-size: 18px;	
 }
+
+.not_homepage {
+	height: 200px;
+}
+
+.not_homepage h3 > a {
+	color: white;
+	text-shadow: black 0.3em 0.3em 0.3em;
+	font-family: 'Merriweather Sans', sans-serif;
+}
+
+.not_homepage p {
+	font-size: 18px;
+	color: white;
+	text-shadow: black 0.3em 0.3em 0.3em;
+	font-family: 'Merriweather Sans', sans-serif;
+}
+
+.not_homepage nav {
+	margin-top: -30px;
+}
+
+/* media query */
+@media screen and (max-width: 900px ) {
+	nav {
+		position: static;
+	}
+
+	.main-navigation {
+		width: 100%;
+		margin-top: -15px;
+		}
+
+	.main-navigation ul li {
+		float: right;
+		width: 100%;
+	}
+
+	.main-navigation ul li a{
+		text-align: right;
+		padding: 15px 25px 15px 0;
+		width: 100%;
+		border-bottom: 1px solid #e7e7e7;
+		border-left: none;
+		font-size: 13px;
+	}
+
+	button.menu-toggle {
+		float: right;
+	}
+
+}/* close media query */
