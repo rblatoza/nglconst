@@ -13,7 +13,6 @@ get_header(); ?>
 		
 		<?php
 		//&posts_per_page=2&offset=0
-		echo get_cat_ID(single_cat_title());
 		$cat_id = get_cat_ID(single_cat_title('', False ));
 		query_posts("cat={$cat_id}");
 		if ( have_posts() ) : ?>

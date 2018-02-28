@@ -17,12 +17,11 @@
 }
 
 .main-navigation {
-	margin-top: -30px;
+	margin-top: -10px;
 }
 
 .main-navigation ul {
 	float : right;
-	margin-top: 
 }
 
 .main-navigation ul li {
@@ -58,7 +57,7 @@
 }
 
 .not_homepage {
-	height: 200px;
+	height: 220px;
 }
 
 .not_homepage h3 > a {
@@ -75,14 +74,11 @@
 }
 
 .not_homepage nav {
-	margin-top: -30px;
+	margin-top: -20px;
 }
 
 /* media query */
 @media screen and (max-width: 900px ) {
-	nav {
-		position: static;
-	}
 
 	.main-navigation {
 		width: 100%;
@@ -107,4 +103,10 @@
 		float: right;
 	}
 
+.menu-item-has-children ul {
+	position: static;
+}
+
 }/* close media query */
+
+

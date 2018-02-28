@@ -11,7 +11,7 @@
 
 
 <nav id="site-navigation" class="main-navigation">
-    <button class="menu-toggle btn btn-primary" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Main Menu', 'nglconst' ); ?></button>
+    <button class="menu-toggle btn btn-primary" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'nglconst' ); ?></span></button>
     <?php
     wp_nav_menu( array(
     'theme_location' => 'menu-1',
